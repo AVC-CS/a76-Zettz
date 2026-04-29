@@ -20,14 +20,6 @@ void printoutcontents(string, string, int, string, int);
 int makeNameRecord(string state[], string gender[], int year[], string name[], int count[])
 {
     // TODO: open "babyname.txt", read each line into the parallel arrays,
-    //       return the total number of records read.
-    ifstream inputfile;
-    int cnt = 0;
-    inputfile.open("babyname.txt", fstream::in);
-    if (!inputfile)
-    {
-        cout << "Error with Opening the file\n";
-        exit(0);
     }
     while (inputfile >> state[cnt] >> gender[cnt] >> year[cnt] >> name[cnt] >> count[cnt])
         cnt++;
@@ -38,15 +30,6 @@ int makeNameRecord(string state[], string gender[], int year[], string name[], i
 int findNames(int cnt, string state[], string gender[], int year[], string name[], int count[], char starting, string stname)
 {
     // TODO: print each record where the state matches `stname` and the name
-    //       starts with `starting`, then return how many were found.
-    int lines = 0;
-    cout << "The list of names in " << stname << " and starting with " << starting << endl;
-    for (int i = 0; i < cnt; i++)
-    {
-        if ((name[i].rfind(starting, 0) == 0) && (state[i] == stname))
-        {
-            printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
-            lines++;
         }
     }
     cout << "total lines: " << lines << endl;
